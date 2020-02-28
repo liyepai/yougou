@@ -1,4 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-首页
+  <!-- 搜索框 -->
+  <navigator src='/'>
+    <view class="search">
+      <view class="searchInput">
+        <icon type='search' size='20'></icon>
+        搜索
+      </view>
+    </view>
+  </navigator>
+  <!-- 轮播图 -->
+  <!-- ture的话，可以默认不写后面的字符串，false的话 整个去掉就ok -->
+  <swiper class="swipers" 
+  indicator-dots="{{true}}"
+  circular
+   autoplay="{{false}}" indicator-color='rgba(255,255,255,.3)' indicator-active-color='rgba(255,255,255,1)'>
+    <!--block是没有语义的 一般用于for循环  -->
+    <block wx:for="{{banners}}" wx:key="index">
+      <swiper-item>
+        <image mode="aspectFill" src="{{item.image_src}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
