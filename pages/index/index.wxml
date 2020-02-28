@@ -11,10 +11,7 @@
   </navigator>
   <!-- 轮播图 -->
   <!-- ture的话，可以默认不写后面的字符串，false的话 整个去掉就ok -->
-  <swiper class="swipers" 
-  indicator-dots="{{true}}"
-  circular
-   autoplay="{{false}}" indicator-color='rgba(255,255,255,.3)' indicator-active-color='rgba(255,255,255,1)'>
+  <swiper class="swipers" indicator-dots="{{true}}" circular autoplay="{{false}}" indicator-color='rgba(255,255,255,.3)' indicator-active-color='rgba(255,255,255,1)'>
     <!--block是没有语义的 一般用于for循环  -->
     <block wx:for="{{banners}}" wx:key="index">
       <swiper-item>
@@ -22,4 +19,34 @@
       </swiper-item>
     </block>
   </swiper>
+  <!-- 中间导航栏 -->
+  <view class="nav">
+    <block wx:for='{{unlike}}' wx:key='index'>
+      <navigator url="{{item.url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="aspectFill"></image>
+      </navigator>
+    </block>
+  </view>
+
+  <!-- 楼层-->
+  <view class="lou" wx:for='{{louceng}}' wx:key='index'>
+    <image class="img" src="{{item.floor_title.image_src}}"></image>
+    <view class="louchen">
+      <view class="lou-left">
+        <image mode="aspectFill" src="{{item.product_list[0].image_src}}"></image>
+      </view>
+      <view class="lou-right">
+        <image mode="aspectFill" wx:for='{{item.product_list}}' wx:key='index' wx-if='{{index>0}}' src='{{item.image_src}}'></image>
+
+      </view>
+    </view>
+  </view>
+
+  <!-- 回到顶部 -->
+  <view class="huiTop">
+    <view class="iconfont">&#xe62c</view>
+
+  </view>
+
+
 </view>

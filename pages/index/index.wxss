@@ -25,3 +25,64 @@
   width: 750rpx;
   height: 340rpx;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.nav image {
+  width: 128rpx;
+  height: 140rpx;
+}
+
+.lou {
+  margin-top: 20rpx;
+}
+
+.img {
+  width: 750rpx;
+  height: 60rpx;
+}
+
+.louchen {
+  padding: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.louchen .lou-left {
+  margin-right: 12rpx;
+}
+
+.louchen .lou-left image {
+  width: 232rpx;
+  height: 386rpx;
+}
+
+.louchen .lou-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  /* 自动换行 */
+  flex-wrap: wrap;
+}
+
+.louchen .lou-right image {
+  width: 233rpx;
+  height: 188rpx;
+}
+
+/* 先让所有图片变成193  后面的会覆盖 */
+
+.lou + .lou .lou-right image {
+  width: 193rpx;
+}
+
+/* //n是系数 n是从0开始  一开始 3*0+1 那就是第一个  第二次 3*1+1  那就是第四 */
+
+.lou + .lou .lou-right image:nth-child(3n+1) {
+  width: 273rpx;
+}
