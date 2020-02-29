@@ -1,14 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- 搜索框 -->
-  <navigator src='/'>
-    <view class="search">
-      <view class="searchInput">
-        <icon type='search' size='20'></icon>
-        搜索
-      </view>
-    </view>
-  </navigator>
+  <!-- 引入搜索框组件 -->
+  <search/>
   <!-- 轮播图 -->
   <!-- ture的话，可以默认不写后面的字符串，false的话 整个去掉就ok -->
   <swiper class="swipers" indicator-dots="{{true}}" circular autoplay="{{false}}" indicator-color='rgba(255,255,255,.3)' indicator-active-color='rgba(255,255,255,1)'>
@@ -41,12 +34,4 @@
       </view>
     </view>
   </view>
-
-  <!-- 回到顶部 -->
-  <view class="huiTop">
-    <view class="iconfont">&#xe62c</view>
-
-  </view>
-
-
 </view>

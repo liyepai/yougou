@@ -1,2 +1,36 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view>
+  <!-- 搜索 -->
+  <search/>
+  <view class="fenglei">
+    <!-- 左 -->
+    <view class="fl-left">
+      <block wx:for="{{allList}}" wx:key='index'>
+        <view bindtap="dianji" class="fl-leftList {{indexs===index?'gaoliang':''}}" data-index="{{index}}"> {{item.cat_name}}</view>
+      </block>
+    </view>
+    <!-- 右 -->
+    <scroll-view scroll-y='{{true}}' class="fl-right">
+      <!-- 子分类 -->
+      <block wx:for='{{allList[indexs].children}}' wx:key="index">
+        <view class="list">
+          <view class="title">
+            /
+            <text>{{item.cat_name}}</text> /
+          </view>
+          <!--  wx:for-item/index  =''  可指定名称 -->
+          <view class="chanpin">
+            <block wx:for="{{item.children}}" wx:for-item='sunItem' wx:key='index' wx:for-index='sunIndex'>
+              <navigator url="">
+                <image mode="widthFix" src="{{sunItem.cat_icon}}"> </image>
+                <view class="ming"> {{sunItem.cat_name}}</view>
+              </navigator>
+            </block>
+
+          </view>
+
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>

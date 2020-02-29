@@ -1,1 +1,108 @@
-/* pages/category/index.wxss */
+.fenglei {
+  /* 将整个框定位 */
+  position: fixed;
+  top: 100rpx;
+  bottom: 0;
+  width: 750rpx;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+
+.fl-left {
+  width: 200rpx;
+  background: #dcdddd;
+  /* 超出出现滚动条 */
+  overflow: auto;
+  text-align: center;
+  /* 保证左边的导航不会因为右边图片太大挤掉左边 */
+  flex-shrink: 0;
+}
+
+.fl-left::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.fl-leftList {
+  padding: 20rpx 0;
+  border-bottom: 1px solid rgb(156, 124, 124);
+  /*给伪类定的类 */
+  position: relative;
+}
+
+.fl-right {
+  flex: 1;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(202, 188, 188);
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+.title text {
+  color: rgb(41, 38, 38);
+  margin: 0 20rpx;
+}
+
+/* 点击高亮 */
+
+.gaoliang {
+  background: #fffeff;
+  color: #ff4247;
+  border-right:#dcdddd 1px solid; 
+}
+
+/* 使用伪类 */
+
+.gaoliang::before {
+  display: block;
+  content: '';
+  width: 3px;
+  height: 16px;
+  text-align: center;
+  background: #ff4247;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.chanpin {
+  display: flex;
+  flex-wrap: wrap;
+  /* 内减模式 *//* padding: 0 20rpx; *//* box-sizing: border-box; */
+}
+
+.chanpin navigator {
+  display: flex;
+  justify-content: center;
+  /* 将元素垂直显示 */
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  width: 33.33%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.chanpin navigator image {
+  width: 175rpx;
+  height: 95rpx;
+}
+
+.ming {
+  width: 175rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
